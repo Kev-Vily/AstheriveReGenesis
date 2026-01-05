@@ -15,7 +15,7 @@ public class GenesisPal{
     
     quartz = Color.valueOf("ECF2EE"),
     quartzMid = Color.valueOf("AFB8B2"),
-    quartDark = Color.valueOf("808480"),
+    quartzDark = Color.valueOf("808480"),
     magnetite = Color.valueOf("97989C"),
     magnetiteMid = Color.valueOf("6C6E75"),
     magnetiteDark = Color.valueOf("3C3E45");
