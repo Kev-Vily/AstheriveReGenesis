@@ -163,8 +163,8 @@ public class Root extends BioBlock {
             }
             //growing eyes (scary)
             boolean eyeNearby = false;
-            for(int i=-10;i<10;i++){
-                for(int j=-10;j<10;j++){
+            for(int i=-eyeSpacing;i<eyeSpacing;i++){
+                for(int j=-eyeSpacing;j<eyeSpacing;j++){
                     Building adj;
                     adj = tile.nearby(i,j).build;
                     if (adj != null && (adj.block instanceof BioEye)) {                        
@@ -177,8 +177,8 @@ public class Root extends BioBlock {
             }
             //growing turret spitter (randomly)
             boolean turretNearby = false;
-            for(int i=-10;i<10;i++){
-                for(int j=-10;j<10;j++){
+            for(int i=-turretSpitterRandSpacing;i<turretSpitterRandSpacing;i++){
+                for(int j=-turretSpitterRandSpacing;j<turretSpitterRandSpacing;j++){
                     Building adj;
                     adj = tile.nearby(i,j).build;
                     if (adj != null && (adj.block instanceof BioTurret)) {                        

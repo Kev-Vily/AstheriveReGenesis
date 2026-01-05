@@ -36,8 +36,10 @@ public class BioBlock extends Block {
     public boolean allowBridge=false;
     public boolean allowEye=false;
     public float eyeRate=0.01f;
+    public int eyeSpacing=10;
     public boolean allowTurretSpitterRand=false;
     public float turretSpitterRandRate=0.01f;
+    public int turretSpitterRandSpacing=10;
     
     public BioBlock(String name){
         super(name);
@@ -100,7 +102,7 @@ public class BioBlock extends Block {
                 deathTimer+=delta();
             }
             if (deathTimer>=deathTimerLimit){
-                this.damage(4);
+                this.damage(2);
             }
             
             if (drawPulseScale>0.01f) {
