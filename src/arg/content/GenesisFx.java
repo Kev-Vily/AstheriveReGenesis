@@ -21,5 +21,5 @@ public class GenesisFx{
         color(GenesisPal.terraPurple, GenesisPal.terraPurple, e.fin());
         stroke(e.fout() * 3f);
         Lines.circle(e.x, e.y, e.fin() * 32f);
-    }),
+    });
 }
