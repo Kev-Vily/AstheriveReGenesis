@@ -22,14 +22,17 @@ import mindustry.gen.*;
 import mindustry.type.*;
 import java.util.Random;
 import arg.graphics.*;
+import arg.content.GenesisFx;
+import mindustry.entities.Effect;
 
 import static mindustry.Vars.*;
 
 public class BioSpawner extends BioBlock {
     public UnitType unitType;
     public TextureRegion bubbleRegion;
+    public Effect spawnEffect=GenesisFx.bulbPop;
     
-    public float wscl = 25f, wmag = 0.4f, wtscl = 1f, wmag2 = 1f;
+    public float wscl = 10f, wmag = 1.2f, wtscl = 1f, wmag2 = 1.5f;
     
     public int pulseToSpawn=10;
     public BioSpawner(String name){
@@ -57,6 +60,7 @@ public class BioSpawner extends BioBlock {
                     unit.set(x, y);
                     unit.rotation = 90f;
                     unit.add();
+                    spawnEffect.at(x,y);
                 }
             }
         }
@@ -64,7 +68,8 @@ public class BioSpawner extends BioBlock {
         public void draw(){
             drawPulse(block.region,drawPulseScale);
             //copied from WobbleProp lol
-            Draw.rectv(bubbleRegion, tile.worldx(), tile.worldy(), region.width * region.scl(), region.height * region.scl(), 0, vec -> vec.add(
+            float bubbleScale=0.9+spawnProgress/pulseToSpawn/3;
+            Draw.rectv(bubbleRegion, tile.worldx(), tile.worldy(), region.width * region.scl()*drawPulseScale*bubbleScale, region.height * region.scl()*drawPulseScale*bubbleScale, 0, vec -> vec.add(
             Mathf.sin(vec.y*3 + Time.time, wscl, wmag) + Mathf.sin(vec.x*3 - Time.time, 70 * wtscl, 0.8f * wmag2),
             Mathf.cos(vec.x*3 + Time.time + 8, wscl + 6f, wmag * 1.1f) + Mathf.sin(vec.y*3 - Time.time, 50 * wtscl, 0.2f * wmag2)
             ));
