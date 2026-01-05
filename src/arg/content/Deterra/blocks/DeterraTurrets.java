@@ -40,7 +40,7 @@ public class DeterraTurrets {
         {
             {
                 fracture = new ItemTurret("fracture"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 40, DeterraItems.magnetite, 30));
+                    requirements(Category.turret, with(DeterraItems.quartz, 35, DeterraItems.magnetite, 25));
                     researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 75);
   
                     health = 140;
@@ -59,7 +59,7 @@ public class DeterraTurrets {
                     shootY = 0f;
 
                     ammo(
-                        DeterraItems.quartz, new BasicBulletType(3.8f, 90) {{
+                        DeterraItems.quartz, new BasicBulletType(3.8f, 39) {{
                             lifetime = 30f;
                             
                             width = 8f;
@@ -86,7 +86,7 @@ public class DeterraTurrets {
                     }};
                 }};
                 frail = new ItemTurret("frail"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 30, DeterraItems.magnetite, 45));
+                    requirements(Category.turret, with(DeterraItems.quartz, 30, DeterraItems.magnetite, 35));
                     researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 120);
   
                     health = 150;
@@ -105,7 +105,7 @@ public class DeterraTurrets {
                     shootY = 1.5f;
 
                     ammo(
-                        DeterraItems.magnetite, new BasicBulletType(5.5f, 34) {{
+                        DeterraItems.magnetite, new BasicBulletType(5.5f, 14) {{
                             lifetime = 28f;
                             
                             width = 7f;

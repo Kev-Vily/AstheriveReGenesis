@@ -50,6 +50,7 @@ public class Terraplasm {
                 }};
                 root = new Root("root"){{
                     requirements(Category.distribution, with(DeterraItems.quartz, 1));
+                    health = 10;
                 }};
                 
                 branchNode = new BioBridge("branch-node"){{
@@ -58,6 +59,7 @@ public class Terraplasm {
 
                 sighter = new BioEye("sighter"){{
                     requirements(Category.distribution, with(DeterraItems.quartz, 1));
+                    health = 20;
                 }};
                 
                 harvester = new BioDrill("harvester"){{
