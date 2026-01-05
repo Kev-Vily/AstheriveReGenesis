@@ -74,7 +74,7 @@ public class TerraUnitTypes{
             drownTimeMultiplier = 2f;
             segments = 3;
             drawBody = false;
-            crushDamage = 0.5f;
+            crushDamage = 0.3f;
             aiController = HugAI::new;
             targetAir = false;
 

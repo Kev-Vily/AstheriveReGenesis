@@ -90,7 +90,7 @@ public class DeterraTurrets {
   
                     health = 150;
                     outlineColor = GenesisPal.deterraOutline;
-                    reload = 50f;
+                    reload = 35f;
                     inaccuracy = 3f;
                     size = 2;
                     recoil = 1f;
@@ -103,7 +103,7 @@ public class DeterraTurrets {
                     shootY = 1.5f;
 
                     ammo(
-                        DeterraItems.magnetite, new BasicBulletType(5.5f, 54) {{
+                        DeterraItems.magnetite, new BasicBulletType(5.5f, 34) {{
                             lifetime = 28f;
                             
                             width = 7f;
@@ -118,7 +118,7 @@ public class DeterraTurrets {
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
-                    shoot = new ShootAlternate(4.5f);
+                    shoot = new ShootAlternate(5f);
                     drawer = new DrawTurret(){{
                         for(int i = 0; i < 2; i ++){
                             int f = i;
