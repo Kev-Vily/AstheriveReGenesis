@@ -24,6 +24,8 @@ import arg.content.terraplasm.Terraplasm;
 import static mindustry.Vars.*;
 
 public class BioHeart extends BioBlock {
+    //modify with data patch for seizure
+    public float heartBpm=80;
     public BioHeart(String name){
         super(name);
         priority = TargetPriority.core;
@@ -36,7 +38,7 @@ public class BioHeart extends BioBlock {
         public void updateTile() {
             if (fullyGrown){
                 growProgress=0f;
-                if (pulseTimer<45f) {
+                if (pulseTimer<3600/heartBpm) {
                     pulseTimer+=delta();
                 } else {
                     updatePulse();
