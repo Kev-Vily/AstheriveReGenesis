@@ -36,51 +36,96 @@ import static mindustry.Vars.*;
 
 public class DeterraTurrets {
     public static Block
-            fracture;
+            fracture,frail;
     public static void load() {
         {
             {
                 fracture = new ItemTurret("fracture"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 50, DeterraItems.magnetite, 40));
+                    requirements(Category.turret, with(DeterraItems.quartz, 40, DeterraItems.magnetite, 30));
                     researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 75);
   
-                    health = 700;
+                    health = 140;
                     outlineColor = GenesisPal.deterraOutline;
                     reload = 80f;
-                    inaccuracy = 2f;
-                    size = 3;
+                    inaccuracy = 0.5f;
+                    size = 2;
                     recoil = 3f;
-                    range = 18 * Vars.tilesize;
+                    range = 14 * Vars.tilesize;
                     rotateSpeed = 3f;
                     squareSprite = false;
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
                     shootWarmupSpeed = 0.07f;
-                    shootY = 5;
+                    shootY = 2;
 
                     ammo(
-                        DeterraItems.quartz, new BasicBulletType(2.5f, 90) {{
-                            lifetime = 60f;
+                        DeterraItems.quartz, new BasicBulletType(3.8f, 90) {{
+                            lifetime = 30f;
                             
-                            width = 10f;
-                            height = 16f;
+                            width = 8f;
+                            height = 14f;
                             weaveMag = 2;
                             hitEffect = despawnEffect = Fx.hitBulletColor;
-                            hitColor = backColor = trailColor = Color.valueOf("d39169");
-                            frontColor = Color.valueOf("eac1a8");
+                            hitColor = backColor = trailColor = GenesisPal.quartzDark;
+                            frontColor = GenesisPal.quartz;
                             trailWidth = 2.1f;
                             trailLength = 7;
                             shootEffect = new MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
                             smokeEffect = Fx.shootBigSmoke;
                         }}
                     );
-                    drawer = new DrawTurret("verdara-"){{
+                    drawer = new DrawTurret(){{
                         parts.add(
-                            new RegionPart("-side"){{
-                                progress = PartProgress.warmup;
+                            new RegionPart("-barrel"){{
+                                progress = PartProgress.recoil;
+                                mirror = false;
+                                under = true;
+                                moveY = -1.5f;
+                            }}
+                        );
+                    }};
+                }};
+                frail = new ItemTurret("frail"){{
+                    requirements(Category.turret, with(DeterraItems.quartz, 30, DeterraItems.magnetite, 45));
+                    researchCost = with(DeterraItems.quartz, 100, DeterraItems.magnetite, 120);
+  
+                    health = 150;
+                    outlineColor = GenesisPal.deterraOutline;
+                    reload = 50f;
+                    inaccuracy = 3f;
+                    size = 2;
+                    recoil = 3f;
+                    range = 19 * Vars.tilesize;
+                    rotateSpeed = 2f;
+                    squareSprite = false;
+                    shootSound = Sounds.shootDisperse;
+                    minWarmup = 0.8f;
+                    shootWarmupSpeed = 0.07f;
+                    shootY = 2;
+
+                    ammo(
+                        DeterraItems.magnetite, new BasicBulletType(5.5f, 54) {{
+                            lifetime = 28f;
+                            
+                            width = 7f;
+                            height = 16f;
+                            weaveMag = 2;
+                            hitEffect = despawnEffect = Fx.hitBulletColor;
+                            hitColor = backColor = trailColor = GenesisPal.magnetiteDark;
+                            frontColor = GenesisPal.magnetite;
+                            trailWidth = 2.1f;
+                            trailLength = 7;
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
+                            smokeEffect = Fx.shootBigSmoke;
+                        }}
+                    );
+                    drawer = new DrawTurret(){{
+                        parts.add(
+                            new RegionPart("-barrel"){{
+                                progress = PartProgress.recoil;
                                 mirror = true;
-                                under = false;
-                                moveRot = -10;
+                                under = true;
+                                moveY = -   1;
                             }}
                         );
                     }};
