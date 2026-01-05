@@ -55,7 +55,7 @@ public class DeterraTurrets {
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
                     shootWarmupSpeed = 0.07f;
-                    shootY = 0;
+                    shootY = 0f;
 
                     ammo(
                         DeterraItems.quartz, new BasicBulletType(3.8f, 90) {{
@@ -100,7 +100,7 @@ public class DeterraTurrets {
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
                     shootWarmupSpeed = 0.07f;
-                    shootY = 1.5;
+                    shootY = 1.5f;
 
                     ammo(
                         DeterraItems.magnetite, new BasicBulletType(5.5f, 54) {{
