@@ -14,6 +14,6 @@ Early version, may have issues and things can change in the future.
 This is a revamp of discontinued mod called Astherive Genesis
 '''
 subtitle: "v0.11-0"
-version: 0.1
+version: 0.11
 minGameVersion: 154
 java: true
