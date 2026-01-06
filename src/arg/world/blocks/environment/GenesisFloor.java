@@ -15,7 +15,7 @@ import mindustry.graphics.*;
 import mindustry.graphics.MultiPacker.*;
 import mindustry.type.*;
 import mindustry.world.*;
-import mindustry.world.blocks.environment*;
+import mindustry.world.blocks.environment.*;
 
 import java.util.*;
 

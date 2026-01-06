@@ -10,6 +10,8 @@ import arg.content.deterra.DeterraItems;
 import arg.graphics.*;
 import arg.content.*;
 import mindustry.entities.abilities.*;
+import arg.content.deterra.blocks.*;
+import arg.world.blocks.environment.*;
 
 /** Config class for special uwu unit properties. */
 public class TerraUnitType extends UnitType{
@@ -39,7 +41,7 @@ public class TerraUnitType extends UnitType{
             for(int ym = -3+1;ym<=3;ym++){
                 Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);
                 float dist = Mathf.sqrt(Mathf.pow(unit.x/tilesize-xm,2)+Mathf.pow(unit.x/tilesize-xm,2));
-                if(other.floor() instaceof GenesisFloor otherfloor){
+                if(other.floor() instanceof GenesisFloor otherfloor){
                     //no
                 }
             }
