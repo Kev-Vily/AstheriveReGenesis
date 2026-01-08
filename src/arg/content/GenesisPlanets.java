@@ -37,7 +37,7 @@ public class GenesisPlanets{
             solarSystem = this;
 
             meshLoader = () -> new SunMesh(
-                    this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
+                    this, 10, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
                     Color.valueOf("8EAFC3"),
                     Color.valueOf("A1C6CF"),
@@ -46,7 +46,7 @@ public class GenesisPlanets{
                     Color.valueOf("FFFFFF")
             );
             cloudMeshLoader = () -> new MultiMesh(
-                    new HexSkyMesh(this, 6, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.95f), 3, 0.42f, 1f, 0.43f)             
+                    new HexSkyMesh(this, 9, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.95f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
         thessar = new Planet("thessar", orrin, 2f, 0){{
@@ -56,7 +56,7 @@ public class GenesisPlanets{
             orbitRadius = 55f;
 
             meshLoader = () -> new SunMesh(
-                    this, 5, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
+                    this, 9, 8, 0.4f, 0.7f, 1.4f, 1.6f, 1.2f,
 
                     Color.valueOf("A2615D"),
                     Color.valueOf("BD7771"),
@@ -67,7 +67,7 @@ public class GenesisPlanets{
         }};
 
         // region planets
-        deterra = new Planet("deterra", thessar, 1f, 3){{
+        deterra = new Planet("deterra", thessar, 1f, 4){{
             accessible = true;
             hasAtmosphere = true;
             landCloudColor = Color.valueOf("DBF3FF");
@@ -100,7 +100,7 @@ public class GenesisPlanets{
                 new HexMesh(this, 7)
             );
             cloudMeshLoader = () -> new MultiMesh(
-                new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("BAD1D4").a(0.6f), 7, 0.7f, 2f, 0.43f)             
+                new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("BAD1D4").a(0.4f), 7, 0.4f, 2f, 0.43f)             
             );
         }};
         protus = new Planet("protus", deterra, 0.5f, 2){{
