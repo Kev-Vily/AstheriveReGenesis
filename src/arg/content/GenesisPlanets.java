@@ -48,7 +48,7 @@ public class GenesisPlanets{
                     new HexSkyMesh(this, 7, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.4f),3,0.42f, 1f, 0.43f)
             );
         }};
-        yaruth = new yaruth("yaruth", orrin, 2.5f, 0){{
+        yaruth = new Planet("yaruth", orrin, 2.5f, 0){{
             accessible = false;
             hasAtmosphere = true;
             solarSystem = orrin;
