@@ -12,6 +12,7 @@ import mindustry.content.Blocks;
 import mindustry.graphics.g3d.*;
 import mindustry.maps.planet.AsteroidGenerator;
 import mindustry.maps.planet.ErekirPlanetGenerator;
+import arg.planet.*;
 import mindustry.type.*;
 import mindustry.world.Block;
 import mindustry.world.meta.Env;
@@ -94,13 +95,12 @@ public class GenesisPlanets{
             campaignRuleDefaults.fog = true;
             startSector = 2;
             minZoom = 0.75f;
-            generator = new SerpuloPlanetGenerator();
+            generator = new DeterraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
-                new NoiseMesh(this,7,5,Color.valueOf("313439"),1f,4,1,1,0.1f),
-                new NoiseMesh(this,7,5,Color.valueOf("5A5541"),0.96f,7,3,2.5f,0.5f)
+                new HexMesh(this, 7)
             );
             cloudMeshLoader = () -> new MultiMesh(
-                    new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
+                new HexSkyMesh(this, 11, 2.7f, 0.1f, 5, Color.valueOf("EEF3FF").a(0.88f), 3, 0.42f, 1f, 0.43f)             
             );
         }};
         protus = new Planet("protus", deterra, 0.5f, 2){{
