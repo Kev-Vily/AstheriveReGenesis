@@ -21,7 +21,7 @@ import mindustry.maps.planet.*;
 public class GenesisPlanets{
     public static Planet
             //star
-            orrin,khessar,nroo,
+            orrin,nroo,khessar,hista,
 
     // planets
     deterra,
