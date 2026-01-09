@@ -41,6 +41,8 @@ public class BioBlock extends Block {
     public float turretSpitterRandRate=0.01f;
     public int turretSpitterRandSpacing=10;
     
+    public int pulseToGrowRoot=3;
+    
     public BioBlock(String name){
         super(name);
         update=true;
@@ -55,12 +57,12 @@ public class BioBlock extends Block {
         public float pulseProgress=0;
         public int biopulse=0;
         public float pulseTimer=0;
-        public float resetPulseTimer=0;
         public float deathTimer=0;
         public float deathTimerLimit=180f;
         public boolean pulsed=false;
         public boolean fullyGrown=false;
-        public float growProgress=-1;
+        public float growProgress=-1
+        public int pulseCharge=0; //+1 everytime this block pulse
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
         public float drawPulseScale=0;
@@ -87,6 +89,7 @@ public class BioBlock extends Block {
                     pulseTimer=0;
                     biopulse=0;
                     pulsed=true;
+                    pulseCharge++;
                     drawPulseScale=pulseScale;
                 }
             }
@@ -179,7 +182,8 @@ public class BioBlock extends Block {
                     }
                 }
                 Random random = new Random();
-                if (isRoot&&possibleGrowDir.size()>0&&biopulse>1){
+                if (isRoot&&possibleGrowDir.size()>0&&biopulse>1&&allowRoot&&pulseCharge>=pulseToGrowRoot){
+                    pulseCharge=0;
                     growRoot();
                 }
             }

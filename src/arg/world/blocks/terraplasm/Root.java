@@ -122,6 +122,17 @@ public class Root extends BioBlock {
                 }
             }
         }
+        
+        public void grow(growBlock){
+            Building heart=getNearestHeart().build;
+            if(heart!=null&&heart.items.has(growBlock.requirements)){
+                tile.setBlock(growBlock,team);
+                for(var stack : growBlock.requirements){
+                    heart.items.remove(stack.item);
+                }
+            }
+        }
+        
         @Override
         public void updatePulse(){
             super.updatePulse();
@@ -159,7 +170,7 @@ public class Root extends BioBlock {
                 }
             }
             if(itemsNearby>11&&!bridgeNearby&&allowBridge){
-                tile.setBlock(Terraplasm.branchNode,team);
+                grow(Terraplasm.branchNode);
             }
             //growing eyes (scary)
             boolean eyeNearby = false;
@@ -173,7 +184,7 @@ public class Root extends BioBlock {
                 }
             }
             if(!eyeNearby&&allowEye&&random.nextFloat()<eyeRate){
-                tile.setBlock(Terraplasm.sighter,team);
+                grow(Terraplasm.sighter);
             }
             //growing turret spitter (randomly)
             boolean turretNearby = false;
@@ -198,7 +209,7 @@ public class Root extends BioBlock {
                     }
                 }
                 
-                if(!turretNearby&&clear&&allowTurretSpitterRand&&random.nextFloat()<turretSpitterRandRate) tile.setBlock(Terraplasm.spitter,team);
+                if(!turretNearby&&clear&&allowTurretSpitterRand&&random.nextFloat()<turretSpitterRandRate) grow(Terraplasm.spitter);
             }
 
             //item movement
