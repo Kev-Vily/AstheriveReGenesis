@@ -57,6 +57,7 @@ public class BioBlock extends Block {
         public float pulseProgress=0;
         public int biopulse=0;
         public float pulseTimer=0;
+        public float resetPulseTimer=0;
         public float deathTimer=0;
         public float deathTimerLimit=180f;
         public boolean pulsed=false;
