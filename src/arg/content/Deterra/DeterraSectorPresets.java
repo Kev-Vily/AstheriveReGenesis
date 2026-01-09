@@ -14,8 +14,14 @@ public class DeterraSectorPresets {
            overrideLaunchDefaults = true;
         }};
         woodland = new GenesisSectorPreset("woodland", GenesisPlanets.deterra, 286){{
-           difficulty = 1;
+           difficulty = 2;
            overrideLaunchDefaults = true;
         }};
+        /*
+        remnants = new GenesisSectorPreset("remnants", GenesisPlanets.deterra, 105){{
+           difficulty = 2;
+           overrideLaunchDefaults = true;
+        }};
+        */
     }
 }

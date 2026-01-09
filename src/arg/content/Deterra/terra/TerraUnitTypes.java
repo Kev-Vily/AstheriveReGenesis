@@ -67,7 +67,7 @@ public class TerraUnitTypes{
         }};
         turf = new TerraUnitType("turf"){{
             constructor = CrawlUnit::create;
-            health = 100;
+            health = 80;
             hitSize = 9f;
             omniMovement = false;
             rotateSpeed = 2.5f;
