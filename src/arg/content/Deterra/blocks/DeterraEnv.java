@@ -55,7 +55,7 @@ public class DeterraEnv {
                     liquidDrop = Liquids.water;
                     isLiquid = true;
                     cacheLayer = CacheLayer.water;
-                    albedo = 0.95f;
+                    albedo = 1f;
                     supportsOverlay = false;
                     drownTime = 120;
                 }};
@@ -111,7 +111,7 @@ public class DeterraEnv {
                     supportsOverlay = false;
                 }};
                 alyogelFloor = new GenesisFloor("alyogel-floor"){{
-                    speedMultiplier = 0.4f;
+                    speedMultiplier = 0.8f;
                     variants = 4;
                     liquidDrop = Liquids.water;
                     isLiquid = true;

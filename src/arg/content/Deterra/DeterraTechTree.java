@@ -16,7 +16,9 @@ public class DeterraTechTree {
         GenesisPlanets.deterra.techTree = nodeRoot("Deterra", DeterraStorage.coreProtocol, () -> {
             node(DeterraItems.quartz, Seq.with(new Objectives.Produce(DeterraItems.quartz)), () -> {
                node(DeterraItems.magnetite, Seq.with(new Objectives.Produce(DeterraItems.magnetite)), () ->{
+                  node(DeterraItems.polterite, Seq.with(new Objectives.Produce(DeterraItems.polterite)), () ->{
                   
+               });
                });
             });
             node(DeterraDistribution.itemTube, () -> {
@@ -27,10 +29,8 @@ public class DeterraTechTree {
                 node(DeterraDistribution.itemOverpass);
             });
             node(DeterraProduction.jaggedDrill, () -> {
-                node(DeterraProduction.jaggedDrill, () -> {
-                    node(DeterraProduction.cliffBore,Seq.with(new Objectives.OnSector(woodland)),() -> {
+                node(DeterraProduction.cliffBore,Seq.with(new Objectives.OnSector(woodland)),() -> {
                         
-                    });
                 });
             });
             node(DeterraProduction.polteritePress,Seq.with(new Objectives.OnSector(woodland)), () -> {
