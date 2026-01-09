@@ -20,7 +20,7 @@ public class ThrataPlanetGenerator extends PlanetGenerator {
     }
 
     float rawHeight(Vec3 position) {
-        return Simplex.noise3d(seed, octaves, persistence, 1f / heightScl, 10f + position.x, 10f + position.y, 10f + position.z) * 0.6f (position.dst(craterPos)<0.4f?0f:0.4f);
+        return Simplex.noise3d(seed, octaves, persistence, 1f / heightScl, 10f + position.x, 10f + position.y, 10f + position.z) * 0.6f + (position.dst(craterPos)<0.4f?0f:0.4f);
     }
 
     @Override
