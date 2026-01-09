@@ -29,11 +29,11 @@ public class DeterraTechTree {
                 node(DeterraDistribution.itemOverpass);
             });
             node(DeterraProduction.jaggedDrill, () -> {
-                node(DeterraProduction.cliffBore,Seq.with(new Objectives.OnSector(woodland)),() -> {
+                node(DeterraProduction.cliffBore,Seq.with(new Objectives.SectorComplete(woodland)),() -> {
                         
                 });
             });
-            node(DeterraProduction.polteritePress,Seq.with(new Objectives.OnSector(woodland)), () -> {
+            node(DeterraProduction.polteritePress,Seq.with(new Objectives.SectorComplete(woodland)), () -> {
             });
             node(DeterraTurrets.fracture,Seq.with(new Objectives.OnSector(woodland)), () -> {
                 node(DeterraTurrets.frail, () -> {

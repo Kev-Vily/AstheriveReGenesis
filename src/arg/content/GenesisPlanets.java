@@ -119,11 +119,11 @@ public class GenesisPlanets{
               r.onlyDepositCore = true;
               r.waveTeam = GenesisTeams.terraplasm;
             };
-            allowLaunchToNumbered = true;
+            allowLaunchToNumbered = false;
             updateLighting = true;
             campaignRuleDefaults.fog = true;
             startSector = 2;
-            minZoom = 0.2f;
+            minZoom = 0.3f;
             generator = new DeterraPlanetGenerator();
             meshLoader = () -> new MultiMesh(
                 new HexMesh(this, 7)
