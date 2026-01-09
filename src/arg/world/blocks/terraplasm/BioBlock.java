@@ -61,7 +61,7 @@ public class BioBlock extends Block {
         public float deathTimerLimit=180f;
         public boolean pulsed=false;
         public boolean fullyGrown=false;
-        public float growProgress=-1
+        public float growProgress=-1;
         public int pulseCharge=0; //+1 everytime this block pulse
 
         public ArrayList<Integer> possibleGrowDir = new ArrayList<>();
