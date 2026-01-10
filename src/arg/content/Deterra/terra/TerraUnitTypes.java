@@ -19,13 +19,14 @@ import arg.type.unit.*;
 import arg.content.*;
 import mindustry.type.weapons.*;
 import mindustry.content.*;
+package mindustry.entities.abilities.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
 
 public class TerraUnitTypes{
     public static UnitType
-    canopy, turf;
+    canopy, turf, boit;
     public static void load(){
         canopy = new CamouflageUnitType("canopy"){{
             constructor = LegsUnit::create;
