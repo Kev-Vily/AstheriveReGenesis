@@ -87,7 +87,7 @@ public class TerraUnitTypes{
         boit = new TerraUnitType("boit"){{
             constructor = UnitWaterMove::create;
             health = 240;
-            hitSize = 12f;
+            hitSize = 13f;
             omniMovement = false;
             rotateSpeed = 2f;
             targetAir = false;
@@ -96,7 +96,7 @@ public class TerraUnitTypes{
             
             trailLength = 20;
             waveTrailX = 4f;
-            trailScl = 1.3f;
+            trailScl = 2f;
             
             moveSoundVolume = 0.4f;
             moveSound = Sounds.shipMove;

@@ -27,6 +27,8 @@ public class BioDrill extends BioBlock {
     protected Item returnItem;
     protected int returnCount;
     
+    public int pulseToDrill=14;
+    
     public BioDrill(String name){
         super(name);
         update=true;
@@ -76,7 +78,7 @@ public class BioDrill extends BioBlock {
                     }
                 }
                 countOre(tile);
-                if(pulseSource != null && drillProgress >= 14-returnCount && returnItem != null) {
+                if(pulseSource != null && drillProgress >= pulseToDrill-returnCount && returnItem != null) {
                     drillProgress = 0;
                     Building target = pulseSource.build;
                     if(target != null && target instanceof BioBuilding && target.acceptItem(this, returnItem)){

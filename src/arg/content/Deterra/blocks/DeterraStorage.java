@@ -25,7 +25,8 @@ public class DeterraStorage {
                     size = 4;
                     isFirstTier = true;
                     squareSprite = false;
-                    itemCapacity = 4000;
+                    itemCapacity = 2000;
+                    health = 3200;
                     unitType = DeterraUnitTypes.ward;
                     alwaysUnlocked = true;
                 }};

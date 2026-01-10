@@ -26,6 +26,7 @@ import static mindustry.Vars.*;
 public class BioHeart extends BioBlock {
     //modify with data patch for seizure
     public float heartBpm=80;
+    public int heartPower=32;
     public BioHeart(String name){
         super(name);
         priority = TargetPriority.core;
@@ -73,7 +74,7 @@ public class BioHeart extends BioBlock {
                         }
                         if (adj instanceof BioBuilding adjbuild) {
                             if (!adjbuild.pulsed) {                        
-                                adjbuild.biopulse=Math.max(adjbuild.biopulse,32);
+                                adjbuild.biopulse=Math.max(adjbuild.biopulse,heartPower);
                                 adjbuild.pulseSource=tile;
                             }
                         }
