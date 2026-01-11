@@ -68,7 +68,7 @@ public class TerraUnitTypes{
         }};
         turf = new TerraUnitType("turf"){{
             constructor = CrawlUnit::create;
-            health = 80;
+            health = 110;
             hitSize = 9f;
             omniMovement = false;
             rotateSpeed = 2.5f;
@@ -86,7 +86,7 @@ public class TerraUnitTypes{
         }};
         boit = new TerraUnitType("boit"){{
             constructor = UnitWaterMove::create;
-            health = 140;
+            health = 210;
             hitSize = 13f;
             omniMovement = false;
             rotateSpeed = 2f;
@@ -96,7 +96,7 @@ public class TerraUnitTypes{
             
             trailLength = 28;
             waveTrailX = 4f;
-            trailScl = 4.8f;
+            trailScl = 2f;
             
             moveSoundVolume = 0.4f;
             moveSound = Sounds.shipMove;

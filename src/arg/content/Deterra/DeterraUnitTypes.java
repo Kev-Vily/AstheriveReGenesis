@@ -77,7 +77,7 @@ public class DeterraUnitTypes{
                     homingDelay = 4f;
                     width = 7f;
                     height = 11f;
-                    lifetime = 30f;
+                    lifetime = 27f;
                 }};
             }});
         }};
