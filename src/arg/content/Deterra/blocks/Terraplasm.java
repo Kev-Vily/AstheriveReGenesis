@@ -91,7 +91,7 @@ public class Terraplasm {
                 }};
                 
                 spitter = new BioTurret("spitter"){{
-                    requirements(Category.turret, with(DeterraItems.quartz, 5,DeterraItems.magnetite,4));
+                    requirements(Category.turret, with(DeterraItems.quartz, 3,DeterraItems.magnetite,4));
                     outlineColor = GenesisPal.terraOutline;
                     reload = 45f;
                     inaccuracy = 8f;

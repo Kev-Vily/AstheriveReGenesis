@@ -31,7 +31,7 @@ public class BioHeart extends BioBlock {
         super(name);
         priority = TargetPriority.core;
         hasItems = true;
-        itemCapacity = 100;
+        itemCapacity = 20;
         unloadable = false;
     }
     public class BioHeartBuild extends BioBuilding {        

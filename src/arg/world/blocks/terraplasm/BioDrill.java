@@ -27,7 +27,7 @@ public class BioDrill extends BioBlock {
     protected Item returnItem;
     protected int returnCount;
     
-    public int pulseToDrill=14;
+    public int pulseToDrill=12;
     
     public BioDrill(String name){
         super(name);
