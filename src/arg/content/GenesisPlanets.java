@@ -17,6 +17,7 @@ import mindustry.type.*;
 import mindustry.world.Block;
 import mindustry.world.meta.Env;
 import mindustry.maps.planet.*;
+import mindustry.graphics.g3d.*;
 
 public class GenesisPlanets{
     public static Planet
