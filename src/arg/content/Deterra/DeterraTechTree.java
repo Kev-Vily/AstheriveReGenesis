@@ -64,7 +64,7 @@ public class DeterraTechTree {
             });
             node(DeterraSectorPresets.landfall, () -> {
                 node(DeterraSectorPresets.woodland, Seq.with(new Objectives.SectorComplete(landfall)), () -> {
-                    node(DeterraSectorPresets.remnants, Seq.with(new Objectives.SectorComplete(woodland),Objectives.Research(DeterraUnits.boatAssembler),Objectives.Research(DeterraDistribution.itemLauncher)), () -> {
+                    node(DeterraSectorPresets.remnants, Seq.with(new Objectives.SectorComplete(woodland),new Objectives.Research(DeterraUnits.boatAssembler),new Objectives.Research(DeterraDistribution.itemLauncher)), () -> {
                     });
                 });
             });

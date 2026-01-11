@@ -5,7 +5,7 @@ import arg.type.GenesisSectorPreset;
 import mindustry.type.SectorPreset;
 
 public class DeterraSectorPresets {
-    public static GenesisSectorPreset landfall,woodland;
+    public static GenesisSectorPreset landfall,woodland,remnants;
 
     public static void load(){
         landfall = new GenesisSectorPreset("landfall", GenesisPlanets.deterra, 2){{
