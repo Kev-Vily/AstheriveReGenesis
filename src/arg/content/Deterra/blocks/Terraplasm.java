@@ -87,6 +87,7 @@ public class Terraplasm {
                     unitType = TerraUnitTypes.boit;
                     pulseToSpawn = 16;
                     health = 400;
+                    spawnEffect = GenesisFx.boitPodPop;
                 }};
                 
                 spitter = new BioTurret("spitter"){{

@@ -10,6 +10,7 @@ public class GenesisPal{
     terraplasmTeam = Color.valueOf("BEB871"),
     bioGreen = Color.valueOf("91A259"),
     terraPurple = Color.valueOf("A793B4"),
+    terraCyan = Color.valueOf("93B3B4"),
 
     lightNylon = Color.valueOf("ABEBD5"), //what
     

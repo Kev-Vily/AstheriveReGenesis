@@ -22,6 +22,11 @@ public class GenesisFx{
         stroke(e.fout() * 3f);
         Lines.circle(e.x, e.y, e.fin() * 32f);
     }),
+    boitPodPop = new Effect(10f, 80f, e -> {
+        color(GenesisPal.terraCyan, GenesisPal.terraCyan, e.fin());
+        stroke(e.fout() * 6f);
+        Lines.circle(e.x, e.y, e.fin() * 52f);
+    }),
     shootSpitter = new Effect(32f, 80f, e -> {
         color(Pal.lightFlame, Pal.darkFlame, Color.gray, e.fin());
 
