@@ -71,7 +71,7 @@ public class DeterraUnitTypes{
                 y = 2f;
                 top = false;
                 baseRotation = -15f;
-                shootCone 75f;
+                shootCone = 75f;
                 bullet = new BasicBulletType(3.2f, 7){{
                     homingPower = 0.19f;
                     homingDelay = 4f;
