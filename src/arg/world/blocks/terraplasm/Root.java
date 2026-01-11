@@ -140,7 +140,7 @@ public class Root extends BioBlock {
             boolean clear2 = true;
             for(int i=0;i<=1;i++){
                 for(int j=0;j<=1;j++){
-                    Building adj;
+                    Tile adj;
                     adj = tile.nearby(i,j);
                     if (adj.block() != null && !(adj.build instanceof RootBuild)){   
                         clear2 = false;
@@ -150,7 +150,7 @@ public class Root extends BioBlock {
             boolean clear3 = true;
             for(int i=0;i<=2;i++){
                 for(int j=0;j<=2;j++){
-                    Building adj;
+                    Tile adj;
                     adj = tile.nearby(i,j);
                     if (adj.block() != null && !(adj.build instanceof RootBuild)){   
                         clear3 = false;
@@ -159,7 +159,7 @@ public class Root extends BioBlock {
             }
             //growing drill
             if(tile != null && tile.drop() != null && allowDrill && clear2){
-                if(clear) tile.setBlock(Terraplasm.harvester,team);
+                tile.setBlock(Terraplasm.harvester,team);
             }
 
             //growing bridge
@@ -206,7 +206,7 @@ public class Root extends BioBlock {
                 }
             }
             if(tile != null && allowTurretSpitterRand && clear2){
-                if(!turretNearby&&clear&&allowTurretSpitterRand&&random.nextFloat()<turretSpitterRandRate) grow(Terraplasm.spitter);
+                if(!turretNearby&&random.nextFloat()<turretSpitterRandRate) grow(Terraplasm.spitter);
             }
             //growing spawning bulb
             boolean bulbNearby = false;
