@@ -141,12 +141,12 @@ public class GenesisPlanets{
         thrata = new Planet("thrata", deterra, 0.3f, 2){{
             accessible = false;
             hasAtmosphere = false;
-            landCloudColor = Color.valueOf("895397");
+            landCloudColor = Color.valueOf("624B4F");
             orbitTime = 60f*5f;
             rotateTime = 60f*6f;
             orbitSpacing = 1;
             orbitRadius = 4f;
-            iconColor = Color.valueOf("895397");
+            iconColor = Color.valueOf("624B4F");
             solarSystem = ryii;
             alwaysUnlocked = false;
             generator = new ThrataPlanetGenerator();
