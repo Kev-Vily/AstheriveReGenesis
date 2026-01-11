@@ -136,19 +136,29 @@ public class Root extends BioBlock {
             super.updatePulse();
             
             Random random = new Random();
-            //growing drill
-            if(tile != null && tile.drop() != null && allowDrill){
-                boolean clear = true;
-                for(int i=0;i<=1;i++){
-                    for(int j=0;j<=1;j++){
-                        Building adj;
-                        adj = tile.nearby(i,j).build;
-                        if (adj != null && !(adj instanceof RootBuild)) {                        
-                            clear = false;
-                        }
+            
+            boolean clear2 = true;
+            for(int i=0;i<=1;i++){
+                for(int j=0;j<=1;j++){
+                    Building adj;
+                    adj = tile.nearby(i,j);
+                    if (adj.block() != null && !(adj.build instanceof RootBuild)){   
+                        clear2 = false;
                     }
                 }
-                
+            }
+            boolean clear3 = true;
+            for(int i=0;i<=2;i++){
+                for(int j=0;j<=2;j++){
+                    Building adj;
+                    adj = tile.nearby(i,j);
+                    if (adj.block() != null && !(adj.build instanceof RootBuild)){   
+                        clear3 = false;
+                    }
+                }
+            }
+            //growing drill
+            if(tile != null && tile.drop() != null && allowDrill && clear2){
                 if(clear) tile.setBlock(Terraplasm.harvester,team);
             }
 
@@ -195,19 +205,22 @@ public class Root extends BioBlock {
                     }
                 }
             }
-            if(tile != null && allowTurretSpitterRand){
-                boolean clear = true;
-                for(int i=0;i<=1;i++){
-                    for(int j=0;j<=1;j++){
-                        Building adj;
-                        adj = tile.nearby(i,j).build;
-                        if (adj != null && !(adj instanceof RootBuild)) {                        
-                            clear = false;
-                        }
+            if(tile != null && allowTurretSpitterRand && clear2){
+                if(!turretNearby&&clear&&allowTurretSpitterRand&&random.nextFloat()<turretSpitterRandRate) grow(Terraplasm.spitter);
+            }
+            //growing spawning bulb
+            boolean bulbNearby = false;
+            for(int i=-bulbSpacing;i<bulbSpacing;i++){
+                for(int j=-bulbSpacing;j<bulbSpacing;j++){
+                    Building adj;
+                    adj = tile.nearby(i,j).build;
+                    if (adj != null && (adj.block instanceof BioSpawner)) {                        
+                        bulbNearby = true;
                     }
                 }
-                
-                if(!turretNearby&&clear&&allowTurretSpitterRand&&random.nextFloat()<turretSpitterRandRate) grow(Terraplasm.spitter);
+            }
+            if(tile != null && allowBulb && clear3){
+                if(!bulbNearby&&random.nextFloat()<bulbRate) grow(Terraplasm.spawningBulb);
             }
 
             //item movement

@@ -40,6 +40,9 @@ public class BioBlock extends Block {
     public boolean allowTurretSpitterRand=false;
     public float turretSpitterRandRate=0.01f;
     public int turretSpitterRandSpacing=10;
+    public boolean allowBulb=false;
+    public float bulbRate=0.01f;
+    public int bulbSpacing=22;
     
     public int pulseToGrowRoot=2;
     
