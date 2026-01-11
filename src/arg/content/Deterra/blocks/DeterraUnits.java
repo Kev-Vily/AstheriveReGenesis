@@ -31,7 +31,7 @@ public class DeterraUnits {
                 }};
                 boatAssembler = new UnitFactory("boat-assembler"){{
                     requirements(Category.units, with(DeterraItems.quartz, 35, DeterraItems.magnetite,70, DeterraItems.polterite,20));
-                    plans.add(new UnitPlan(DeterraUnitTypes.tide, 14 * 60f, with(DeterraItems.quartz, 15,DeterraItems.carbon, 20)));
+                    plans.add(new UnitPlan(DeterraUnitTypes.tide, 14 * 60f, with(DeterraItems.quartz, 20,DeterraItems.polterite, 5)));
                     consumePower(110/60f);
                     size = 3;
                     researchCost = with(DeterraItems.quartz,175,DeterraItems.magnetite,200,DeterraItems.polterite,50);
