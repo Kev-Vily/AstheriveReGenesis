@@ -76,10 +76,17 @@ public class Terraplasm {
                     requirements(Category.distribution, with(DeterraItems.quartz, 1));
                 }};
                 spawningBulb = new BioSpawner("spawning-bulb"){{
-                    requirements(Category.distribution, with(DeterraItems.quartz, 1));
+                    requirements(Category.distribution, with(DeterraItems.quartz, 7,DeterraItems.magnetite, 5));
                     size = 3;
                     unitType = TerraUnitTypes.turf;
-                    health = 500;
+                    health = 300;
+                }};
+                boitPod = new BioSpawner("boit-pod"){{
+                    requirements(Category.distribution, with(DeterraItems.quartz, 12,DeterraItems.magnetite, 8));
+                    size = 3;
+                    unitType = TerraUnitTypes.boit;
+                    pulseToSpawn = 16;
+                    health = 400;
                 }};
                 
                 spitter = new BioTurret("spitter"){{
