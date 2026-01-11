@@ -24,7 +24,7 @@ public class KikreaPlanetGenerator extends PlanetGenerator {
 
     @Override
     public void getColor(Vec3 position, Color out) {
-        Block block = rawHeight(position) < 0.5f ? Blocks.deepTaintedWater : rawHeight(position) < 0.6f ? Blocks.taintedWater : rawHeight(position) < 0.68f ? Blocks.crystallineStone : Blocks.crystalFloor
+        Block block = rawHeight(position) < 0.5f ? Blocks.deepTaintedWater : rawHeight(position) < 0.6f ? Blocks.taintedWater : rawHeight(position) < 0.68f ? Blocks.crystallineStone : Blocks.crystalFloor;
 
         out.set(block.mapColor).a(1f - block.albedo);
     }

@@ -24,7 +24,7 @@ public class SeerkPlanetGenerator extends PlanetGenerator {
 
     @Override
     public void getColor(Vec3 position, Color out) {
-        Block block = rawHeight(position) < 0.5f ? Blocks.slag : rawHeight(position) < 0.6f ? Blocks.regolith : rawHeight(position) < 0.68f ? Blocks.yellowStone : Blocks.yellowStonePlates
+        Block block = rawHeight(position) < 0.5f ? Blocks.slag : rawHeight(position) < 0.6f ? Blocks.regolith : rawHeight(position) < 0.68f ? Blocks.yellowStone : Blocks.yellowStonePlates;
 
         out.set(block.mapColor).a(1f - block.albedo);
     }
