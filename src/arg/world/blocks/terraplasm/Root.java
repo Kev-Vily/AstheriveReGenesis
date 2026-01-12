@@ -213,7 +213,7 @@ public class Root extends BioBlock {
             for(int i=-bulbSpacing;i<bulbSpacing;i++){
                 for(int j=-bulbSpacing;j<bulbSpacing;j++){
                     Tile adj;
-                    adj = tile.nearby(i,j).;
+                    adj = tile.nearby(i,j);
                     if (adj != null && adj.build!=null && (adj.build.block instanceof BioSpawner)) {                        
                         bulbNearby = true;
                     }
