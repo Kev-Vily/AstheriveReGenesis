@@ -66,13 +66,13 @@ public class DeterraUnitTypes{
             moveSound = Sounds.shipMove;
             
             weapons.add(new Weapon("arg-tide-weapon"){{
-                reload = 48f;
+                reload = 28f;
                 x = 4.8f;
                 y = 2f;
                 baseRotation = -15f;
                 shootCone = 90f;
                 layerOffset = -0.001f;
-                bullet = new BasicBulletType(3.2f, 22){{
+                bullet = new BasicBulletType(3.2f, 21){{
                     homingPower = 0.19f;
                     homingDelay = 4f;
                     width = 7f;

@@ -51,7 +51,7 @@ public class DeterraTurrets {
                     size = 2;
                     recoil = 1f;
                     range = 14 * Vars.tilesize;
-                    rotateSpeed = 3f;
+                    rotateSpeed = 2.5f;
                     squareSprite = false;
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
@@ -92,12 +92,12 @@ public class DeterraTurrets {
                     health = 150;
                     maxAmmo = 5;
                     outlineColor = GenesisPal.deterraOutline;
-                    reload = 35f;
+                    reload = 24f;
                     inaccuracy = 3f;
                     size = 2;
                     recoil = 1f;
                     range = 19 * Vars.tilesize;
-                    rotateSpeed = 2f;
+                    rotateSpeed = 3f;
                     squareSprite = false;
                     shootSound = Sounds.shootDisperse;
                     minWarmup = 0.8f;
