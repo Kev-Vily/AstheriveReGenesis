@@ -62,17 +62,17 @@ public class BioDrill extends BioBlock {
                 drillProgress++;
                 for(int i=0;i<4;i++){
                     for(int j=0;j<=1;j++){
-                        Building adj;
+                        Tile adj;
                         if(i==0){
-                            adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j).build;
+                            adj = tile.nearby(Geometry.d4(i).x*2,Geometry.d4(i).y*2+j);
                         } else if(i==1) {
-                            adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2).build;
+                            adj = tile.nearby(Geometry.d4(i).x*2+j,Geometry.d4(i).y*2);
                         } else if(i==2) {
-                            adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y+j).build;
+                            adj = tile.nearby(Geometry.d4(i).x,Geometry.d4(i).y+j);
                         } else {
-                            adj = tile.nearby(Geometry.d4(i).x+j,Geometry.d4(i).y).build;
+                            adj = tile.nearby(Geometry.d4(i).x+j,Geometry.d4(i).y);
                         }
-                        if (adj instanceof BioBuilding adjbuild) {
+                        if (adj!=null&&adj.build!=null&&adj.buildinstanceof BioBuilding adjbuild) {
                             //smh
                         }
                     }

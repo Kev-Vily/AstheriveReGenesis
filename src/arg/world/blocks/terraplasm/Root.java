@@ -167,12 +167,12 @@ public class Root extends BioBlock {
             int itemsNearby = 0;
             for(int i=-5;i<5;i++){
                 for(int j=-5;j<5;j++){
-                    Building adj;
-                    adj = tile.nearby(i,j).build;
-                    if (adj != null && (adj.block instanceof BioBridge)) {                        
+                    Tile adj;
+                    adj = tile.nearby(i,j);
+                    if (adj!=null&&adj.build != null && (adj.build.block instanceof BioBridge)) {                        
                         bridgeNearby = true;
                     }
-                    if(adj != null && (adj instanceof RootBuild adjbuild) && adjbuild.lastItem != null){
+                    if(adj!=null&&adj.build != null && (adj.build instanceof RootBuild adjbuild) && adjbuild.lastItem != null){
                         itemsNearby++;
                     }
                 }
@@ -184,9 +184,9 @@ public class Root extends BioBlock {
             boolean eyeNearby = false;
             for(int i=-eyeSpacing;i<eyeSpacing;i++){
                 for(int j=-eyeSpacing;j<eyeSpacing;j++){
-                    Building adj;
-                    adj = tile.nearby(i,j).build;
-                    if (adj != null && (adj.block instanceof BioEye)) {                        
+                    Tile adj;
+                    adj = tile.nearby(i,j);
+                    if (adj != null && adj.build!=null && (adj.build.block instanceof BioEye)) {                        
                         eyeNearby = true;
                     }
                 }
@@ -198,9 +198,9 @@ public class Root extends BioBlock {
             boolean turretNearby = false;
             for(int i=-turretSpitterRandSpacing;i<turretSpitterRandSpacing;i++){
                 for(int j=-turretSpitterRandSpacing;j<turretSpitterRandSpacing;j++){
-                    Building adj;
-                    adj = tile.nearby(i,j).build;
-                    if (adj != null && (adj.block instanceof BioTurret)) {                        
+                    Tile adj;
+                    adj = tile.nearby(i,j);
+                    if (adj != null && adj.build!= null&& (adj.build.block instanceof BioTurret)) {                        
                         turretNearby = true;
                     }
                 }
@@ -212,9 +212,9 @@ public class Root extends BioBlock {
             boolean bulbNearby = false;
             for(int i=-bulbSpacing;i<bulbSpacing;i++){
                 for(int j=-bulbSpacing;j<bulbSpacing;j++){
-                    Building adj;
-                    adj = tile.nearby(i,j).build;
-                    if (adj != null && (adj.block instanceof BioSpawner)) {                        
+                    Tile adj;
+                    adj = tile.nearby(i,j).;
+                    if (adj != null && adj.build!=null && (adj.build.block instanceof BioSpawner)) {                        
                         bulbNearby = true;
                     }
                 }
