@@ -163,7 +163,7 @@ public class TerraUnitTypes{
                     offset = 80;
                     region = "arg-floa-wing";
                     spin = 10;
-                    layer = 115.1;
+                    layer = 115.1f;
                     rotWithParent = true;
                     }},new ParticleEffect(){{
                     casingFlip = true;
@@ -179,7 +179,7 @@ public class TerraUnitTypes{
                     offsetY = 0;
                     region = "arg-floa-wing";
                     spin = -10;
-                    layer = 115.1;
+                    layer = 115.1f;
                     rotWithParent = true;
                     }});
             }});
