@@ -20,6 +20,7 @@ import arg.content.*;
 import mindustry.type.weapons.*;
 import mindustry.content.*;
 import mindustry.entities.abilities.*;
+import mindustry.world.meta.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
@@ -128,6 +129,87 @@ public class TerraUnitTypes{
                     collidesAir = true;
                 }};
             }});
+        }};
+        floa = new TerraUnitType("floa"){{
+            constructor = UnitEntity::create;
+            health = 80;
+            speed = 1.7f;
+            accel = 0.08f;
+            drag = 0.03f;
+            flying = true;
+            hitSize = 10f;
+            targetAir = false;
+            range = 140f;
+            faceTarget = false;
+            autoDropBombs = true;
+            targetFlags = new BlockFlag[]{BlockFlag.drill, null};
+            circleTarget = true;
+            omniMovement = false;
+            rotateSpeed = 4.5f;
+            circleTargetRadius = 30f;
+            abilities.add(new MoveEffectAbility(){{
+                minVelocity = 0;
+                interval = 3;
+                parentizeEffects = true;
+                effect = new MultiEffect(new ParticleEffect(){{
+                    casingFlip = true;
+                    lifetime = 3;
+                    clip = 9999;
+                    particles = 1;
+                    cone = 0;
+                    length = 0;
+                    sizeFrom = 15;
+                    sizeTo = 15;
+                    offset = 80;
+                    region = "arg-floa-wing";
+                    spin = 10;
+                    }},new ParticleEffect(){{
+                    casingFlip = true;
+                    lifetime = 3;
+                    clip = 9999;
+                    particles = 1;
+                    cone = 0;
+                    length = 0;
+                    sizeFrom = 15;
+                    sizeTo = 15;
+                    offset = -80;
+                    offsetX = 2;
+                    offsetY = 0;
+                    region = "arg-floa-wing";
+                    spin = -10;
+                    }});
+            }});
+            weapons.add(new Weapon(){{
+                minShootVelocity = 1f;
+                x = 4f;
+                shootY = 0f;
+                reload = 34f;
+                shootCone = 180f;
+                ejectEffect = Fx.none;
+                inaccuracy = 20f;
+                ignoreRotation = true;
+                bullet = new BombBulletType(27f, 20f){{
+                    width = 10f;
+                    height = 10f;
+                    hitEffect = Fx.flakExplosion;
+                    shootEffect = Fx.none;
+                    smokeEffect = Fx.none;
+                    damage = splashDamage * 0.5f;
+                    
+                    fragBullets = 4;
+                    fragLifeMin = 0f;
+                    fragRandomSpread =0f;
+                    
+                    fragBullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                        damage = 13;
+                        speed = 2.5f;
+                        drag = 0.009f;
+                        shootEffect = Fx.none;
+                        lifetime = 57f;
+                        collidesAir = false;
+                    }};
+                }};
+            }});    
         }};
     }
 }
