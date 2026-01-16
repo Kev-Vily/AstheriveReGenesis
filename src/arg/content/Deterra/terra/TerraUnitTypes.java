@@ -139,7 +139,7 @@ public class TerraUnitTypes{
             accel = 0.08f;
             drag = 0.03f;
             flying = true;
-            hitSize = 10f;
+            hitSize = 11f;
             targetAir = false;
             range = 140f;
             faceTarget = false;
@@ -149,7 +149,7 @@ public class TerraUnitTypes{
             omniMovement = false;
             rotateSpeed = 2.5f;
             circleTargetRadius = 60f;
-            abilities.add(new DrawWingAbility(0,1.5f,6,20,5));
+            abilities.add(new DrawWingAbility(0,0,4,20,5));
             weapons.add(new Weapon(){{
                 minShootVelocity = 1f;
                 x = 4f;
