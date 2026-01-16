@@ -13,6 +13,8 @@ import arc.graphics.g2d.*;
 import arc.scene.ui.layout.*;
 import mindustry.graphics.*;
 import arg.world.blocks.terraplasm.*;
+import arg.content.terraplasm.*;
+import mindustry.world.*;
 
 //it draws scary pulsing TextureRegion
 //Only support y offset for a very mysterious reason
@@ -46,7 +48,14 @@ public class HeartAbility extends Ability{
         pulseTimer-=Time.delta;
         if(pulseTimer<=0){
             pulseTimer = 3600/bpm;
-            updatePulse()
+            updatePulse();
+        }
+    }
+    public void growRoot(){
+        //this only grow a single root that grows more roots
+        Tile rootTile = world.tile((int)(Math.round(unit.x/tilesize)),(int)(Math.round(unit.y/tilesize)));
+        if(Build.validPlace(Terraplasm.root, team, neartile.x, neartile.y, 0)){
+            rootTile.setBlock(Terraplasm.root,team);
         }
     }
     public void updatePulse(){
