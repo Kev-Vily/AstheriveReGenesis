@@ -16,6 +16,8 @@ import arg.world.blocks.terraplasm.*;
 import arg.content.terraplasm.*;
 import mindustry.world.*;
 
+import static mindustry.Vars.*;
+
 //it draws scary pulsing TextureRegion
 //Only support y offset for a very mysterious reason
 public class HeartAbility extends Ability{
@@ -26,6 +28,7 @@ public class HeartAbility extends Ability{
     public int heartPower = 24;
 
     protected float pulseTimer;
+    protected float tilesize = 8; //idk why its here but it stays
 
     public HeartAbility(String pulseSuffix, float x, float y, float mag, float bpm){
         this.pulseSuffix = pulseSuffix;
@@ -48,17 +51,18 @@ public class HeartAbility extends Ability{
         pulseTimer-=Time.delta;
         if(pulseTimer<=0){
             pulseTimer = 3600/bpm;
-            updatePulse();
+            updatePulse(unit);
         }
     }
-    public void growRoot(){
+    public void growRoot(Unit unit){
         //this only grow a single root that grows more roots
         Tile rootTile = world.tile((int)(Math.round(unit.x/tilesize)),(int)(Math.round(unit.y/tilesize)));
-        if(Build.validPlace(Terraplasm.root, team, neartile.x, neartile.y, 0)){
+        if(Build.validPlace(Terraplasm.root, unit.team, rootTile.x, rootTile.y, 0)){
             rootTile.setBlock(Terraplasm.root,team);
         }
     }
-    public void updatePulse(){
+    public void updatePulse(Unit unit){
+        growRoot(unit);
         for(int xm = -2;xm<=2;xm++){
             for(int ym = -2;ym<=2;ym++){
                 Tile other = world.tile((int)(Math.round(unit.x/tilesize))+xm,(int)(Math.round(unit.y/tilesize))+ym);

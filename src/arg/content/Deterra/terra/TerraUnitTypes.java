@@ -199,8 +199,8 @@ public class TerraUnitTypes{
             legBaseOffset = 20;
             legExtension = 8;
             legPairOffset = 3;
-            legStraightness = 0.4;
-            legLengthScl = 0.9;
+            legStraightness = 0.4f;
+            legLengthScl = 0.9f;
             legSplashDamage = 17;
             hovering = true;
 
