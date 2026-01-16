@@ -29,7 +29,8 @@ import static arc.graphics.g2d.Lines.*;
 
 public class TerraUnitTypes{
     public static UnitType
-    canopy, turf, boit, floa;
+    canopy, turf, boit, floa,
+    monarch;
     public static void load(){
         canopy = new CamouflageUnitType("canopy"){{
             constructor = LegsUnit::create;
