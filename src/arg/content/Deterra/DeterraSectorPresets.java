@@ -19,7 +19,7 @@ public class DeterraSectorPresets {
         }};
         
         remnants = new GenesisSectorPreset("remnants", GenesisPlanets.deterra, 105){{
-           difficulty = 2;
+           difficulty = 3;
            overrideLaunchDefaults = true;
         }};
         

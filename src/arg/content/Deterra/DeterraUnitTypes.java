@@ -91,7 +91,7 @@ public class DeterraUnitTypes{
             isEnemy = false;
             envDisabled = 0;
 
-            range = 120f;
+            range = 80f;
             faceTarget = true;
             mineWalls = false;
             mineFloor = true;
@@ -131,7 +131,7 @@ public class DeterraUnitTypes{
                 healColor = Pal.accent;
 
                 bullet = new BulletType(){{
-                    maxRange = 60f;
+                    maxRange = 80f;
                 }};
             }});
         }};
