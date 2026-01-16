@@ -21,6 +21,7 @@ import mindustry.type.weapons.*;
 import mindustry.content.*;
 import mindustry.entities.abilities.*;
 import mindustry.world.meta.*;
+import arg.entities.abilities.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
@@ -147,42 +148,7 @@ public class TerraUnitTypes{
             omniMovement = false;
             rotateSpeed = 4.5f;
             circleTargetRadius = 30f;
-            abilities.add(new MoveEffectAbility(){{
-                minVelocity = 0;
-                interval = 3;
-                parentizeEffects = true;
-                effect = new MultiEffect(new ParticleEffect(){{
-                    casingFlip = true;
-                    lifetime = 3;
-                    clip = 9999;
-                    particles = 1;
-                    cone = 0;
-                    length = 0;
-                    sizeFrom = 15;
-                    sizeTo = 15;
-                    offset = 80;
-                    region = "arg-floa-wing";
-                    spin = 10;
-                    layer = 115.1f;
-                    rotWithParent = true;
-                    }},new ParticleEffect(){{
-                    casingFlip = true;
-                    lifetime = 3;
-                    clip = 9999;
-                    particles = 1;
-                    cone = 0;
-                    length = 0;
-                    sizeFrom = 15;
-                    sizeTo = 15;
-                    offset = -80;
-                    offsetX = 2;
-                    offsetY = 0;
-                    region = "arg-floa-wing";
-                    spin = -10;
-                    layer = 115.1f;
-                    rotWithParent = true;
-                    }});
-            }});
+            abilities.add(new DrawWingAbility(2,0,Core.atlas.find("arg-floa-wing"),15,8))
             weapons.add(new Weapon(){{
                 minShootVelocity = 1f;
                 x = 4f;
