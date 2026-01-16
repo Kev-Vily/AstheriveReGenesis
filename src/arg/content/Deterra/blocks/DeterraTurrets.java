@@ -145,18 +145,18 @@ public class DeterraTurrets {
                     inaccuracy = 0f;
                     size = 3;
                     recoil = 1.5f;
-                    range = 17 * Vars.tilesize;
+                    range = 21 * Vars.tilesize;
                     rotateSpeed = 1.5f;
                     squareSprite = true;
                     shootSound = Sounds.shootTank;
                     minWarmup = 0.85f;
                     shootWarmupSpeed = 0.06f;
-                    shootY = 0f;
-                    shake = 0.7f;
+                    shootY = -0.5f;
+                    shake = 2.7f;
 
                     ammo(
-                        DeterraItems.polterite, new BasicBulletType(2.6f, 63) {{
-                            lifetime = 53f;
+                        DeterraItems.polterite, new BasicBulletType(5.6f, 63) {{
+                            lifetime = 19f;
                             
                             width = 12f;
                             height = 20f;
@@ -166,8 +166,8 @@ public class DeterraTurrets {
                             frontColor = GenesisPal.polterite;
                             trailWidth = 3f;
                             trailLength = 7;
-                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
-                            smokeEffect = Fx.shootBigSmoke;
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.shootTitan);
+                            smokeEffect = Fx.shootBigSmoke2;
                             fragBullets = 8;
                             fragLifeMin = 0f;
                             fragRandomSpread = 0f;
@@ -184,6 +184,7 @@ public class DeterraTurrets {
                         parts.add(
                             new RegionPart("-mid"){{
                                 progress = PartProgress.recoil;
+                                heatProgress = PartProgress.recoil;
                                 mirror = false;
                                 under = true;
                                 moveY = -2.5f;
