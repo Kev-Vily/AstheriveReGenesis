@@ -35,7 +35,7 @@ import static mindustry.Vars.*;
 
 public class DeterraTurrets {
     public static Block
-            fracture,frail;
+            fracture,frail,blare;
     public static void load() {
         {
             {
@@ -132,6 +132,63 @@ public class DeterraTurrets {
                                 moveY = -2f;
                             }});
                         }
+                    }};
+                }};
+                blare = new ItemTurret("blare"){{
+                    requirements(Category.turret, with(DeterraItems.quartz, 75, DeterraItems.magnetite, 50, DeterraItems.polterite, 30));
+                    researchCost = with(DeterraItems.quartz, 750, DeterraItems.magnetite, 500, DeterraItems.polterite, 100);
+  
+                    health = 330;
+                    maxAmmo = 5;
+                    outlineColor = GenesisPal.deterraOutline;
+                    reload = 130f;
+                    inaccuracy = 0f;
+                    size = 3;
+                    recoil = 1.5f;
+                    range = 17 * Vars.tilesize;
+                    rotateSpeed = 1.5f;
+                    squareSprite = true;
+                    shootSound = Sounds.shootTitan;
+                    minWarmup = 0.85f;
+                    shootWarmupSpeed = 0.06f;
+                    shootY = 0f;
+                    shake = 0.7f;
+
+                    ammo(
+                        DeterraItems.polterite, new BasicBulletType(2.6f, 63) {{
+                            lifetime = 53f;
+                            
+                            width = 12f;
+                            height = 20f;
+                            weaveMag = 2;
+                            hitEffect = despawnEffect = Fx.hitBulletColor;
+                            hitColor = backColor = trailColor = GenesisPal.polteriteDark;
+                            frontColor = GenesisPal.polterite;
+                            trailWidth = 3f;
+                            trailLength = 7;
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.colorSparkBig);
+                            smokeEffect = Fx.shootBigSmoke;
+                            fragBullets = 8;
+                            fragLifeMin = 0f;
+                            fragRandomSpread = 0f;
+                    
+                            fragBullet = new BasicBulletType(4f,7){{
+                                shootEffect = Fx.none;
+                                lifetime = 13f;
+                                hitEffect = despawnEffect = Fx.hitBulletColor;
+                                hitColor = backColor = trailColor = GenesisPal.polteriteDark;
+                            }};
+                        }}
+                    );
+                    drawer = new DrawTurret(){{
+                        parts.add(
+                            new RegionPart("-mid"){{
+                                progress = PartProgress.recoil;
+                                mirror = false;
+                                under = true;
+                                moveY = -2.5f;
+                            }}
+                        );
                     }};
                 }};
             }
