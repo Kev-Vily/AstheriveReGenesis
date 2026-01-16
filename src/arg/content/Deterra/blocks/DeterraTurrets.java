@@ -35,7 +35,7 @@ import static mindustry.Vars.*;
 
 public class DeterraTurrets {
     public static Block
-            fracture,frail;
+            fracture,frail,blare;
     public static void load() {
         {
             {
@@ -92,7 +92,7 @@ public class DeterraTurrets {
                     health = 150;
                     maxAmmo = 5;
                     outlineColor = GenesisPal.deterraOutline;
-                    reload = 24f;
+                    reload = 17f;
                     inaccuracy = 3f;
                     size = 2;
                     recoil = 1f;
@@ -105,7 +105,7 @@ public class DeterraTurrets {
                     shootY = 1.5f;
 
                     ammo(
-                        DeterraItems.magnetite, new BasicBulletType(5.5f, 14) {{
+                        DeterraItems.magnetite, new BasicBulletType(5.5f, 10) {{
                             lifetime = 28f;
                             
                             width = 7f;
@@ -132,6 +132,65 @@ public class DeterraTurrets {
                                 moveY = -2f;
                             }});
                         }
+                    }};
+                }};
+                blare = new ItemTurret("blare"){{
+                    requirements(Category.turret, with(DeterraItems.quartz, 75, DeterraItems.magnetite, 50, DeterraItems.polterite, 30));
+                    researchCost = with(DeterraItems.quartz, 750, DeterraItems.magnetite, 500, DeterraItems.polterite, 100);
+  
+                    health = 330;
+                    maxAmmo = 5;
+                    outlineColor = GenesisPal.deterraOutline;
+                    reload = 130f;
+                    inaccuracy = 0f;
+                    size = 3;
+                    recoil = 1.5f;
+                    range = 21 * Vars.tilesize;
+                    rotateSpeed = 1.5f;
+                    squareSprite = true;
+                    shootSound = Sounds.shootTank;
+                    minWarmup = 0.85f;
+                    shootWarmupSpeed = 0.06f;
+                    shootY = -0.5f;
+                    shake = 3.1f;
+
+                    ammo(
+                        DeterraItems.polterite, new BasicBulletType(7.1f, 63) {{
+                            lifetime = 24f;
+                            
+                            ammoMultiplier = 1;
+                            width = 12f;
+                            height = 20f;
+                            weaveMag = 2;
+                            hitEffect = despawnEffect = Fx.hitBulletColor;
+                            hitColor = backColor = trailColor = GenesisPal.polteriteDark;
+                            frontColor = GenesisPal.polterite;
+                            trailWidth = 3f;
+                            trailLength = 10;
+                            shootEffect = new MultiEffect(Fx.shootBigColor, Fx.shootTitan);
+                            smokeEffect = Fx.shootBigSmoke2;
+                            fragBullets = 8;
+                            fragLifeMin = 0f;
+                            fragRandomSpread = 180f;
+                    
+                            fragBullet = new BasicBulletType(4f,7){{
+                                shootEffect = Fx.none;
+                                lifetime = 13f;
+                                hitEffect = despawnEffect = Fx.hitBulletColor;
+                                hitColor = backColor = trailColor = GenesisPal.polteriteDark;
+                            }};
+                        }}
+                    );
+                    drawer = new DrawTurret(){{
+                        parts.add(
+                            new RegionPart("-mid"){{
+                                progress = PartProgress.recoil;
+                                heatProgress = PartProgress.recoil;
+                                mirror = false;
+                                under = true;
+                                moveY = -2.5f;
+                            }}
+                        );
                     }};
                 }};
             }

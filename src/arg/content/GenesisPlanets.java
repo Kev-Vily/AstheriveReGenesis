@@ -26,8 +26,8 @@ public class GenesisPlanets{
 
     //planets
     deterra,seerk,kikrea,
-    //asteroid..?
-    verdara,
+    //asteroids..?
+    verdara,aeternus,nyle,
     //moon
     thrata;
 
@@ -166,7 +166,7 @@ public class GenesisPlanets{
                 new HexMesh(this, 6)
             );
         }};
-        kikrea = new Planet("kikrea", hista, 1f, 2){{
+        kikrea = new Planet("kikrea", seerk, 0.4f, 2){{
             accessible = false;
             hasAtmosphere = true;
             orbitSpacing = 1;
@@ -180,6 +180,10 @@ public class GenesisPlanets{
         }};
         //rip verdara
         verdara = makeAsteroid("verdara", khessar, Blocks.stoneWall, Blocks.iceWall, -1, 0.5f, 12, 2f, gen -> {});
+        //WHY IS THIS HERE
+        aeternus = makeAsteroid("aeternus", khessar, Blocks.basalt, Blocks.slag, 2023, 0.5f, 4, 1.6f, gen -> {});
+        //Honor
+        nyle = makeAsteroid("nyle", khessar, Blocks.iceWall, Blocks.water, 2026, 0.6f, 9, 2.6f, gen -> {});
     }
     private static Planet makeAsteroid(String name, Planet parent, Block base, Block tint, int seed, float tintThresh, int pieces, float scale, Cons<AsteroidGenerator> cgen){
         return new Planet(name, parent, 0.12f){{

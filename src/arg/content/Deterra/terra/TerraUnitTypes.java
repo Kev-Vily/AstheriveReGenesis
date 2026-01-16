@@ -1,5 +1,6 @@
 package arg.content.terraplasm;
 
+import arc.*;
 import arc.graphics.*;
 import arc.math.Interp;
 import arc.graphics.g2d.*;
@@ -21,13 +22,15 @@ import mindustry.type.weapons.*;
 import mindustry.content.*;
 import mindustry.entities.abilities.*;
 import mindustry.world.meta.*;
+import arg.entities.abilities.*;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
 
 public class TerraUnitTypes{
     public static UnitType
-    canopy, turf, boit, floa;
+    canopy, turf, boit, floa,
+    monarch;
     public static void load(){
         canopy = new CamouflageUnitType("canopy"){{
             constructor = LegsUnit::create;
@@ -132,12 +135,12 @@ public class TerraUnitTypes{
         }};
         floa = new TerraUnitType("floa"){{
             constructor = UnitEntity::create;
-            health = 80;
-            speed = 1.7f;
+            health = 70;
+            speed = 1.8f;
             accel = 0.08f;
             drag = 0.03f;
             flying = true;
-            hitSize = 10f;
+            hitSize = 11f;
             targetAir = false;
             range = 140f;
             faceTarget = false;
@@ -145,44 +148,9 @@ public class TerraUnitTypes{
             targetFlags = new BlockFlag[]{BlockFlag.drill, null};
             circleTarget = true;
             omniMovement = false;
-            rotateSpeed = 4.5f;
-            circleTargetRadius = 30f;
-            abilities.add(new MoveEffectAbility(){{
-                minVelocity = 0;
-                interval = 3;
-                parentizeEffects = true;
-                effect = new MultiEffect(new ParticleEffect(){{
-                    casingFlip = true;
-                    lifetime = 3;
-                    clip = 9999;
-                    particles = 1;
-                    cone = 0;
-                    length = 0;
-                    sizeFrom = 15;
-                    sizeTo = 15;
-                    offset = 80;
-                    region = "arg-floa-wing";
-                    spin = 10;
-                    layer = 115.1f;
-                    rotWithParent = true;
-                    }},new ParticleEffect(){{
-                    casingFlip = true;
-                    lifetime = 3;
-                    clip = 9999;
-                    particles = 1;
-                    cone = 0;
-                    length = 0;
-                    sizeFrom = 15;
-                    sizeTo = 15;
-                    offset = -80;
-                    offsetX = 2;
-                    offsetY = 0;
-                    region = "arg-floa-wing";
-                    spin = -10;
-                    layer = 115.1f;
-                    rotWithParent = true;
-                    }});
-            }});
+            rotateSpeed = 2.5f;
+            circleTargetRadius = 60f;
+            abilities.add(new DrawWingAbility(0,0.5f,4,20,5));
             weapons.add(new Weapon(){{
                 minShootVelocity = 1f;
                 x = 4f;
@@ -214,6 +182,27 @@ public class TerraUnitTypes{
                     }};
                 }};
             }});    
+        }};
+        monarch = new TerraBossUnitType("monarch"){{
+            constructor = LegsUnit::create;
+            speed = 0.4f;
+            drag = 0.3f;
+            hitSize = 30f;
+            rotateSpeed = 0.7f;
+            targetAir = true;
+            health = 1200;
+            
+            legCount = 4;
+            legLength = 72f;
+            legForwardScl = 0.6f;
+            legMoveSpace = 1.4f;
+            hovering = true;
+
+            shadowElevation = 1.5f;
+            groundLayer = Layer.legUnit + 1f;
+            
+            abilities.add(new DrawPulsingAbility("-heart",0,0,8,45));
+            abilities.add(new DrawRegionAbility("-heart-top"));
         }};
     }
 }

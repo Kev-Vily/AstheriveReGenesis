@@ -39,7 +39,7 @@ public class DeterraUnitTypes{
                 y = 0f;
                 top = false;
                 ejectEffect = Fx.casing1;
-                bullet = new BasicBulletType(2.5f, 9){{
+                bullet = new BasicBulletType(2.5f, 6){{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -72,7 +72,7 @@ public class DeterraUnitTypes{
                 baseRotation = -15f;
                 shootCone = 90f;
                 layerOffset = -0.001f;
-                bullet = new BasicBulletType(3.2f, 21){{
+                bullet = new BasicBulletType(3.2f, 12){{
                     homingPower = 0.19f;
                     homingDelay = 4f;
                     width = 7f;
@@ -91,7 +91,7 @@ public class DeterraUnitTypes{
             isEnemy = false;
             envDisabled = 0;
 
-            range = 120f;
+            range = 80f;
             faceTarget = true;
             mineWalls = false;
             mineFloor = true;
@@ -131,7 +131,7 @@ public class DeterraUnitTypes{
                 healColor = Pal.accent;
 
                 bullet = new BulletType(){{
-                    maxRange = 60f;
+                    maxRange = 80f;
                 }};
             }});
         }};

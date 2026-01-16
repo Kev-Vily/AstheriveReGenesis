@@ -23,6 +23,7 @@ public class TerraUnitType extends UnitType{
         drawCell = false;
         useUnitCap = false; //i will not regret this
         lightRadius = 0;
+        engineSize = 0;
 
         abilities.add(new RegenAbility(){{
             percentAmount = 1f / (80f * 60f) * 100f;
