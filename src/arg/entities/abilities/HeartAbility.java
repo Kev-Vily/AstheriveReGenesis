@@ -58,7 +58,7 @@ public class HeartAbility extends Ability{
         //this only grow a single root that grows more roots
         Tile rootTile = world.tile((int)(Math.round(unit.x/tilesize)),(int)(Math.round(unit.y/tilesize)));
         if(Build.validPlace(Terraplasm.root, unit.team, rootTile.x, rootTile.y, 0)){
-            rootTile.setBlock(Terraplasm.root,team);
+            rootTile.setBlock(Terraplasm.root,unit.team);
         }
     }
     public void updatePulse(Unit unit){
