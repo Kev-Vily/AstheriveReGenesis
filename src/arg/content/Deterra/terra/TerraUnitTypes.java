@@ -134,8 +134,8 @@ public class TerraUnitTypes{
         }};
         floa = new TerraUnitType("floa"){{
             constructor = UnitEntity::create;
-            health = 80;
-            speed = 1.7f;
+            health = 70;
+            speed = 1.8f;
             accel = 0.08f;
             drag = 0.03f;
             flying = true;
@@ -147,9 +147,9 @@ public class TerraUnitTypes{
             targetFlags = new BlockFlag[]{BlockFlag.drill, null};
             circleTarget = true;
             omniMovement = false;
-            rotateSpeed = 4.5f;
-            circleTargetRadius = 30f;
-            abilities.add(new DrawWingAbility(0,0,6,35,4));
+            rotateSpeed = 2.5f;
+            circleTargetRadius = 60f;
+            abilities.add(new DrawWingAbility(0,1.5f,6,20,5));
             weapons.add(new Weapon(){{
                 minShootVelocity = 1f;
                 x = 4f;
