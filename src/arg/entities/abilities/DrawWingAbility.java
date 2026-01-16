@@ -15,16 +15,17 @@ import mindustry.graphics.*;
 
 //it draws wing, nothing else.
 public class DrawWingAbility extends Ability{
-    public float x, y, mag, interval;
+    public float x, y, spread, mag, interval;
     public TextureRegion wingRegion;
     public String wingSuffix = "-wing";
     public float layer = -1;
 
     protected float counter;
 
-    public DrawWingAbility(float x, float y, float mag, float interval){
+    public DrawWingAbility(float x, float y, float spread, float mag, float interval){
         this.x = x;
         this.y = y;
+        this.spread = spread;
         this.mag = mag;
         this.interval = interval;
         display = false;
@@ -48,8 +49,8 @@ public class DrawWingAbility extends Ability{
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
 
-        Draw.rect(wingRegion, unit.x-Mathf.cosDeg(unit.rotation - 90f)*x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*y, unit.rotation + 90f + Mathf.sin(counter)*mag);
-        Draw.rect(wingRegion, unit.x-Mathf.cosDeg(unit.rotation + 90f)*x, unit.y+Mathf.sinDeg(unit.rotation + 90f)*y, unit.rotation - 90f - Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x+Mathf.cosDeg(unit.rotation - 90f)*spread+x, unit.y+Mathf.sinDeg(unit.rotation - 90f)*spread+y, unit.rotation + 90f + Mathf.sin(counter)*mag);
+        Draw.rect(wingRegion, unit.x+Mathf.cosDeg(unit.rotation + 90f)*spread+x, unit.y+Mathf.sinDeg(unit.rotation + 90f)*spread+y, unit.rotation - 90f - Mathf.sin(counter)*mag);
             
         Draw.z(pz);
     }
