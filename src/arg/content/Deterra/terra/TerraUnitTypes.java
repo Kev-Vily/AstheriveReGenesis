@@ -308,6 +308,7 @@ public class TerraUnitTypes{
                 shootSoundVolume = 0.4f;
                 x = 0f;
                 bullet = new BulletType(){{
+                    inaccuracy = 180f;
                     collidesTiles = false;
                     collides = false;
                     spawnUnit = floa;
