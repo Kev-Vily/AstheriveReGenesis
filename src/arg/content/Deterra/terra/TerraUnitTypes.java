@@ -23,6 +23,7 @@ import mindustry.content.*;
 import mindustry.entities.abilities.*;
 import mindustry.world.meta.*;
 import arg.entities.abilities.*;
+import arg.graphics.GenesisPal;
 
 import static arc.graphics.g2d.Draw.*;
 import static arc.graphics.g2d.Lines.*;
