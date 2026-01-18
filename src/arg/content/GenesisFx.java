@@ -37,7 +37,7 @@ public class GenesisFx{
     shootMonarch = new Effect(170f, 80f, e -> {
         color(GenesisPal.biomassLight, GenesisPal.biomass, GenesisPal.biomassDark, e.fin());
 
-        randLenVectors(e.id, 12, e.finpow() * 40f, e.rotation, 30f, (x, y) -> {
+        randLenVectors(e.id, 16, e.finpow() * 40f, e.rotation, 40f, 85f, (x, y) -> {
             Fill.circle(e.x + x, e.y + y, 0.4f + e.fout() * 3f);
         });
     }).followParent(false);
