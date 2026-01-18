@@ -195,7 +195,7 @@ public class TerraUnitTypes{
             legCount = 8;
             legLength = 40f;
             legForwardScl = 0.6f;
-            legMoveSpace = 1f;
+            legMoveSpace = 0.8f;
             legBaseOffset = 20;
             legExtension = 8;
             legPairOffset = 3;
@@ -210,6 +210,43 @@ public class TerraUnitTypes{
             
             abilities.add(new HeartAbility("-heart",0,0,8,90));
             abilities.add(new DrawRegionAbility("-heart-top"));
+            
+            weapons.add(new Weapon("arg-monarch-arm-l"){{
+                shootY = 7f;
+                reload = 180f;
+                ejectEffect = Fx.none;
+                recoil = 3f;
+                x = -20f;
+                mirror = false;
+                shootSound = Sounds.shootTank;
+
+                bullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                    damage = 20;
+                    speed = 6f;
+                    drag = 0.8f;
+                    shootEffect = Fx.shootSmall;
+                    lifetime = 120f;
+                    collidesAir = false;
+                }};
+            }});
+            weapons.add(new Weapon("arg-monarch-arm-r"){{
+                shootY = 7f;
+                reload = 180f;
+                ejectEffect = Fx.none;
+                recoil = 3f;
+                x = 20f;
+                mirror = false;
+                shootSound = Sounds.shootTank;
+
+                bullet = new LiquidBulletType(GenesisLiquids.biomass){{
+                    damage = 20;
+                    speed = 6f;
+                    drag = 0.8f;
+                    shootEffect = Fx.shootSmall;
+                    lifetime = 120f;
+                    collidesAir = false;
+                }};
+            }});
         }};
     }
 }
