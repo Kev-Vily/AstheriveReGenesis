@@ -254,13 +254,13 @@ public class TerraUnitTypes{
                     intervalSpread = 10f;
                 }};
             }});
-            weapons.add(new Weapon("arg-monarch-arm-l"){{
-                shootX = -5f;
+            weapons.add(new Weapon("arg-monarch-arm-r"){{
+                shootX = 5f;
                 shootY = 20f;
                 reload = 180f;
                 ejectEffect = Fx.none;
                 recoil = 8f;
-                x = -23f;
+                x = 23f;
                 mirror = false;
                 shootSound = Sounds.shootTank;
                 shake = 3;
