@@ -296,7 +296,8 @@ public class TerraUnitTypes{
                     intervalSpread = 10f;
                 }};
             }});
-            weapons.add(new Weapon()){{
+            weapons.add(new Weapon(){{
+                alwaysShooting = true;
                 shootY = 15f;
                 reload = 240f;
                 ejectEffect = Fx.none;
