@@ -212,37 +212,37 @@ public class TerraUnitTypes{
             abilities.add(new DrawRegionAbility("-heart-top"));
             
             weapons.add(new Weapon("arg-monarch-arm-l"){{
-                shootY = 7f;
+                shootY = 19f;
                 reload = 180f;
                 ejectEffect = Fx.none;
                 recoil = 3f;
-                x = -20f;
+                x = -23f;
                 mirror = false;
                 shootSound = Sounds.shootTank;
 
                 bullet = new LiquidBulletType(GenesisLiquids.biomass){{
                     damage = 20;
                     speed = 6f;
-                    drag = 0.8f;
-                    shootEffect = Fx.shootSmall;
+                    drag = 0.1f;
+                    shootEffect = Fx.shootMonarch;
                     lifetime = 120f;
                     collidesAir = false;
                 }};
             }});
             weapons.add(new Weapon("arg-monarch-arm-r"){{
-                shootY = 7f;
+                shootY = 19f;
                 reload = 180f;
                 ejectEffect = Fx.none;
                 recoil = 3f;
-                x = 20f;
+                x = 23f;
                 mirror = false;
                 shootSound = Sounds.shootTank;
 
                 bullet = new LiquidBulletType(GenesisLiquids.biomass){{
                     damage = 20;
                     speed = 6f;
-                    drag = 0.8f;
-                    shootEffect = Fx.shootSmall;
+                    drag = 0.1f;
+                    shootEffect = Fx.shootMonarch;
                     lifetime = 120f;
                     collidesAir = false;
                 }};
