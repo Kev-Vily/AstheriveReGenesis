@@ -191,7 +191,7 @@ public class TerraUnitTypes{
             hitSize = 30f;
             rotateSpeed = 0.7f;
             targetAir = false;
-            health = 1200;
+            health = 9200;
             
             legCount = 8;
             legLength = 40f;
